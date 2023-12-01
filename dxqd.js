@@ -10,7 +10,7 @@
 **/
 
 const $ = new Env("朵茜情调");
-const env_name = "2741062";
+const env_name = "YZ1180160840342220800YZy2nhquws";
 const env = $.getdata(env_name)
 //
 
