@@ -34,21 +34,7 @@ async function main() {
         $.msg($.name, "", `没有填写变量: ${env_name}`);
         return;
     }
-    //多账号分割,这里默认是换行(\n)分割,其他情况自己实现
-    //split('\n')会把字符串按照换行符分割, 并把结果存在user_ck数组里
-    let user_ck = env.split('\n');
-    let index = 1; //用来给账号标记序号, 从1开始
-    //循环遍历每个账号
-    for (let ck of user_ck) {
-        if (!ck) continue; //跳过空行
-        let ck_info = ck.split('#');
-        let cookie = ck_info[0];
-        //用一个对象代表账号, 里面存放账号信息
-        let user = {
-            index: index,
-            cookie
-        };
-        index = index + 1; //每次用完序号+1
+   
         //开始账号任务
         await userTask(user);
         //每个账号之间等1~5秒随机时间
